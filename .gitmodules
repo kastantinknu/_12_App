@@ -1,0 +1,6 @@
+[submodule "_12_ViewModel"]
+	path = _12_ViewModel
+	url = https://github.com/kastantinknu/_12_ViewModel.git
+[submodule "_12_Model2"]
+	path = _12_Model2
+	url = https://github.com/kastantinknu/_12_Model2.git
