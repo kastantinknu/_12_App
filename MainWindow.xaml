@@ -1,0 +1,87 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:external="clr-namespace:ViewModel;assembly=ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="406" Width="426">
+    <Window.DataContext>
+        <external:ViewModel/>
+    </Window.DataContext>
+
+    <Grid >
+        <Canvas   Width="300" Height="300" Background="#FFABFF85">
+
+            <Polygon Focusable="True"   Name="hexagon" Stroke="Blue" Fill="Gold" StrokeThickness="2" Points="{Binding Points_of_polygon}" Height="300" Width="300">
+                <Polygon.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Blue" Direction="50" ShadowDepth="5" Softness=".3" Opacity ="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+                </Polygon.BitmapEffect>
+                <Polygon.InputBindings>
+                    <KeyBinding Command="{Binding CommandRIGHT_p}" Key="RIGHT" CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+                    <KeyBinding Command="{Binding CommandLEFT_p}" Key="LEFT" CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+
+                    <KeyBinding Command="{Binding CommandUP_p}" Key="UP" CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}" />
+                    <KeyBinding Command="{Binding CommandUP_p}" Key="NumPad8" CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+
+                    <KeyBinding Command="{Binding CommandDOWN_p}" Key="DOWN" CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+                    <KeyBinding Command="{Binding CommandDOWN_p}" Key="NumPad2" CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+
+                    <KeyBinding Command="{Binding CommandRIGHT_p}" Key="RIGHT" CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+                    <KeyBinding Command="{Binding CommandRIGHT_p}" Key="NumPad6" CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+
+                    <KeyBinding Command="{Binding CommandLEFT_p}" Key="LEFT" CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+                    <KeyBinding Command="{Binding CommandLEFT_p}" Key="NumPad4"  CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+
+
+                    <KeyBinding Command="{Binding CommandUPRIGHT_p}" Key="NumPad9"  CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+                    <KeyBinding Command="{Binding CommandDOWNRIGHT_p}" Key="NumPad3" CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+                    <KeyBinding Command="{Binding CommandDOWNLEFT_p}" Key="NumPad1" CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+                    <KeyBinding Command="{Binding CommandUPLEFT_p}" Key="NumPad7" CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+                    <KeyBinding Command="{Binding CommandUPLEFT_p}" Key="NumPad7" CommandParameter="{Binding IsKeyboardFocused, ElementName=hexagon}"/>
+                </Polygon.InputBindings>
+
+            </Polygon>
+
+            <Polygon Name="star" Stroke="Blue" Fill="DarkOrange" StrokeThickness="2.0" Points="{Binding Points_of_star}" Height="300" Width="300" />
+
+
+
+            <Polygon Name="triangle"  Focusable="True" Stroke="Blue" Fill="DarkOrange" StrokeThickness="2.0" Points="{Binding Points_of_triangle}" Height="300" Width="300" >
+                <Polygon.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Blue" Direction="50" ShadowDepth="5" Softness=".3" Opacity ="{Binding IsKeyboardFocused, ElementName=triangle}"/>
+                </Polygon.BitmapEffect>
+
+                <Polygon.InputBindings>
+
+                    <KeyBinding Command="{Binding CommandUP_t}" Key="UP" CommandParameter="{Binding IsKeyboardFocused, ElementName=triangle}" />
+                    <KeyBinding Command="{Binding CommandUP_t}" Key="NumPad8" CommandParameter="{Binding IsKeyboardFocused, ElementName=triangle}"/>
+
+                    <KeyBinding Command="{Binding CommandDOWN_t}" Key="DOWN" CommandParameter="{Binding IsKeyboardFocused, ElementName=triangle}"/>
+                    <KeyBinding Command="{Binding CommandDOWN_t}" Key="NumPad2" CommandParameter="{Binding IsKeyboardFocused, ElementName=triangle}"/>
+
+                    <KeyBinding Command="{Binding CommandRIGHT_t}" Key="RIGHT" CommandParameter="{Binding IsKeyboardFocused, ElementName=triangle}"/>
+                    <KeyBinding Command="{Binding CommandRIGHT_t}" Key="NumPad6" CommandParameter="{Binding IsKeyboardFocused, ElementName=triangle}"/>
+
+                    <KeyBinding Command="{Binding CommandLEFT_t}" Key="LEFT" CommandParameter="{Binding IsKeyboardFocused, ElementName=triangle}"/>
+                    <KeyBinding Command="{Binding CommandLEFT_t}" Key="NumPad4"  CommandParameter="{Binding IsKeyboardFocused, ElementName=triangle}"/>
+
+
+                    <KeyBinding Command="{Binding CommandUPRIGHT_t}" Key="NumPad9"  CommandParameter="{Binding IsKeyboardFocused, ElementName=triangle}"/>
+                    <KeyBinding Command="{Binding CommandDOWNRIGHT_t}" Key="NumPad3" CommandParameter="{Binding IsKeyboardFocused, ElementName=triangle}"/>
+                    <KeyBinding Command="{Binding CommandDOWNLEFT_t}" Key="NumPad1" CommandParameter="{Binding IsKeyboardFocused, ElementName=triangle}"/>
+                    <KeyBinding Command="{Binding CommandUPLEFT_t}" Key="NumPad7" CommandParameter="{Binding IsKeyboardFocused, ElementName=triangle}"/>
+                    <KeyBinding Command="{Binding CommandUPLEFT_t}" Key="NumPad7" CommandParameter="{Binding IsKeyboardFocused, ElementName=triangle}"/>
+
+                </Polygon.InputBindings>
+
+
+            </Polygon>
+
+            <Polygon Name="square"
+                     Fill="DarkRed" 
+                     Points="136, 86, 154, 86, 154, 214, 136,214" >
+            </Polygon>
+        </Canvas>
+    </Grid>
+</Window>
